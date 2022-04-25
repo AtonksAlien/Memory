@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'Campton';
+  src: url('../font/CamptonBold.otf') format('opentype');
+  font-weight: bold;
+}
+
+*{
+  margin: 0;
+}
+
+.sfondo{
+  background-color: #BEFFEF;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title{
+  font-family: 'Campton';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 112px;
+  text-align: center;
+}
+
+.info{
+  margin-top: 50px;
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.info strong span{
+  margin-left: 5%;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+button{
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 30%;
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  border: 0px;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1840px) {
+  .cards {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  .cards {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1340px) {
+  .cards {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .cards {
+    width: 90%;
+  }
+}
+
+.card{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  width: 15%;
+  aspect-ratio: 1/1;
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
