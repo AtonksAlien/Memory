@@ -8,5 +8,4 @@ for (let i = 0; i < colors.length; i++) {
   cards.appendChild(card)
   card.appendChild(questionMark)
   card.style.backgroundColor = colors[i]
-
 }
