@@ -128,3 +128,7 @@ button{
   transform: translateY(-10px);
   transition: transform 0.5s;
 }
+
+.blocca{
+  transform: rotateY(180deg);
+}

@@ -19,6 +19,7 @@ for (let i = 0; i < colors.length; i++) {
   fronte.classList.add("fronte")
   retro.classList.add("retro")
   retro.style.backgroundColor = colors[i]
+  card.dataset.value = images[i]
 }
 
 //shuffle
@@ -63,21 +64,37 @@ let score = document.querySelector("#score")
 let punti = 0
 //End-Score
 
+let check = []
 let card = document.querySelectorAll(".card")
 card.forEach(carta => {
   carta.addEventListener('click', function (e) {
     e.currentTarget.classList.add("selected")
+    let x = e.currentTarget.getAttribute("data-value")
+    check.push(x)
 
     let selectedCards = document.querySelectorAll(".card.selected")
 
     if (selectedCards.length === 2) {
       mosse++
       moves.innerText = mosse
-      setTimeout(function(){
-        for (let j = 0; j < selectedCards.length; j++) {
-          selectedCards[j].classList.remove("selected")
+
+      if (check[0] == check[1]) {
+        punti++
+        score.innerText = punti
+        for (let i = 0; i < selectedCards.length; i++) {
+          selectedCards[i].classList.add("blocca")
         }
-      }, 1000)
+      } else {
+        console.log(punti);
+        setTimeout(function(){
+          for (let j = 0; j < selectedCards.length; j++) {
+            selectedCards[j].classList.remove("selected")
+          }
+        }, 1000)
+      }
+        check.pop()
+        check.pop()
+        console.log(selectedCards);
     }
   })
 })
@@ -95,5 +112,6 @@ restart.addEventListener('click', function(e) {
   moves.innerText = 0
   for (let i = 0; i < card.length; i++) {
     card[i].classList.remove("selected")
+    card[i].classList.remove("blocca")
   }
 })
