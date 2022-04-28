@@ -104,7 +104,7 @@ button{
   border-radius: 15px;
 }
 
-.retro{
+.retro {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,4 +122,9 @@ button{
 
 .retro img{
   width: 60%;
+}
+
+.card:not(.selected):hover{
+  transform: translateY(-10px);
+  transition: transform 0.5s;
 }
