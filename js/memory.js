@@ -118,6 +118,18 @@ card.forEach(carta => {
 let restart = document.querySelector(".restart")
 
 restart.addEventListener('click', function(e) {
+  clearInterval(record);
+  record = null;
+  record = setInterval(function () {
+    s++;
+    if (s == 60) {
+        m++;
+        s = 0;
+    }
+    time.innerText = `${m < 10 ? "0" + m : m}:${
+        s < 10 ? "0" + s : s
+    }`;
+}, 1000);
 
   title.style.color = "black"
   title.innerText = "Memory Card"
@@ -181,17 +193,6 @@ restart.addEventListener('click', function(e) {
       }
     })
   })
-  const record = setInterval(function () {
-      s++;
-      if (s == 60) {
-          m++;
-          s = 0;
-      }
-      time.innerText = `${m < 10 ? "0" + m : m}:${
-          s < 10 ? "0" + s : s
-      }`;
-  }, 1000);
-
 })
 
 
